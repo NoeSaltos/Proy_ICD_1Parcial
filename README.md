@@ -1,6 +1,6 @@
-#  Documentación del Dataset de Accidentes en EE. UU. (2016–2023)
+#  Documentación del Dataset de Accidentes en EE. UU. (2022)
 
-Este documento describe cada una de las variables presentes en el dataset de accidentes de tránsito registrados en Estados Unidos entre 2016 y 2023.
+Este documento describe cada una de las variables presentes en el dataset de accidentes de tránsito registrados en Estados Unidos en el año 2022.
 
 ---
 
