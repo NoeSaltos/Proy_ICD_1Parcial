@@ -1,148 +1,120 @@
-# ============================================================
-# Documentación del dataset de Accidentes en EE. UU. (2016–2023)
-# ============================================================
+#  Documentación del Dataset de Accidentes en EE. UU. (2016–2023)
 
-# Identification
-# Identificador único de cada registro de accidente.
+Este documento describe cada una de las variables presentes en el dataset de accidentes de tránsito registrados en Estados Unidos entre 2016 y 2023.
 
-# Source
-# Fuente original del dato (por ejemplo, sensores, reportes policiales, APIs de tráfico, etc.).
+---
 
-# Severity
-# Nivel de gravedad del accidente:
-# 1 = menor impacto (demora leve)
-# 2 = impacto moderado
-# 3 = accidente grave
-# 4 = impacto severo (gran congestión o daños significativos)
+## Identification
+**Identificador único del registro de accidente.**
 
-# Start_Time
-# Fecha y hora de inicio del accidente (zona horaria local).
-# Indica cuándo se registró el evento o comenzó el impacto en el tráfico.
+---
 
-# End_Time
-# Fecha y hora de finalización del accidente (zona horaria local).
-# Representa el momento en que el tráfico volvió a la normalidad.
+## Source
+**Fuente original del dato** (sensores, reportes policiales, APIs de tráfico, etc.).
 
-# Start_Lat
-# Latitud GPS del punto de inicio del accidente (coordenadas geográficas).
+---
 
-# Start_Lng
-# Longitud GPS del punto de inicio del accidente (coordenadas geográficas).
+## Severity
+**Nivel de gravedad del accidente:**
 
-# End_Lat
-# Latitud GPS del punto final del accidente (si aplica, puede ser igual al inicio).
+| Valor | Descripción |
+|-------|-------------|
+| **1** | Menor impacto (demora leve) |
+| **2** | Impacto moderado |
+| **3** | Accidente grave |
+| **4** | Impacto severo (gran congestión o daños significativos) |
 
-# End_Lng
-# Longitud GPS del punto final del accidente (si aplica, puede ser igual al inicio).
+---
 
-# Distance(mi)
-# Longitud de la carretera afectada por el accidente, medida en millas.
+## Tiempos del Accidente
 
-# Description
-# Texto descriptivo del accidente (información libre ingresada por reportes humanos o fuentes oficiales).
+| Variable | Descripción |
+|---------|-------------|
+| **Start_Time** | Fecha y hora de inicio del accidente (zona local). |
+| **End_Time** | Fecha y hora de finalización o normalización del tráfico. |
 
-# Street
-# Nombre de la calle o vía donde ocurrió el accidente.
+---
 
-# City
-# Ciudad donde ocurrió el accidente.
+## Coordenadas Geográficas
 
-# County
-# Condado correspondiente a la ubicación del accidente.
+| Variable | Descripción |
+|---------|-------------|
+| **Start_Lat / Start_Lng** | Coordenadas GPS del punto inicial del accidente. |
+| **End_Lat / End_Lng** | Coordenadas del punto final (si aplica). |
+| **Distance(mi)** | Longitud de la carretera afectada, en millas. |
 
-# State
-# Estado de EE. UU. donde se registró el accidente.
+---
 
-# Zipcode
-# Código postal asociado al lugar del accidente.
+## Descripción del Accidente
 
-# Country
-# País donde ocurrió el accidente (por lo general “US”).
+| Variable | Descripción |
+|---------|-------------|
+| **Description** | Texto descriptivo del evento. |
 
-# Timezone
-# Zona horaria de la ubicación (Eastern, Central, Mountain, Pacific, etc.).
+---
 
-# Airport_Code
-# Código del aeropuerto más cercano (sirve como referencia para condiciones meteorológicas).
+##  Ubicación
 
-# Weather_Timestamp
-# Fecha y hora local del registro meteorológico más cercano al accidente.
+| Variable | Descripción |
+|---------|-------------|
+| **Street** | Calle donde ocurrió el accidente. |
+| **City** | Ciudad. |
+| **County** | Condado. |
+| **State** | Estado de EE. UU. |
+| **Zipcode** | Código postal. |
+| **Country** | País (generalmente “US”). |
+| **Timezone** | Zona horaria (Eastern, Central, Pacific, etc.). |
+| **Airport_Code** | Aeropuerto cercano (útil para datos meteorológicos). |
 
-# Temperature(F)
-# Temperatura ambiente en grados Fahrenheit durante el accidente.
+---
 
-# Wind_Chill(F)
-# Sensación térmica (en Fahrenheit), percibida por efecto del viento sobre la temperatura real.
+## Variables Meteorológicas
 
-# Humidity(%)
-# Porcentaje de humedad relativa en el aire.
+| Variable | Descripción |
+|---------|-------------|
+| **Weather_Timestamp** | Momento del registro meteorológico más cercano. |
+| **Temperature(F)** | Temperatura en Fahrenheit. |
+| **Wind_Chill(F)** | Sensación térmica en Fahrenheit. |
+| **Humidity(%)** | Humedad relativa. |
+| **Pressure(in)** | Presión atmosférica (pulgadas de mercurio). |
+| **Visibility(mi)** | Visibilidad horizontal en millas. |
+| **Wind_Direction** | Dirección del viento (N, NE, SE, etc.). |
+| **Wind_Speed(mph)** | Velocidad del viento. |
+| **Precipitation(in)** | Precipitación acumulada. |
+| **Weather_Condition** | Descripción general del clima (Clear, Rain, Snow…). |
 
-# Pressure(in)
-# Presión atmosférica en pulgadas de mercurio (inHg).
+---
 
-# Visibility(mi)
-# Visibilidad horizontal en millas; valores bajos indican niebla o lluvia densa.
+## Infraestructura y Entorno
 
-# Wind_Direction
-# Dirección del viento (por ejemplo, N, NW, SE).
+Valor booleano (True/False) indicando presencia cercana:
 
-# Wind_Speed(mph)
-# Velocidad del viento en millas por hora.
+| Variable | Significado |
+|---------|-------------|
+| **Amenity** | Servicios cercanos (tiendas, gasolineras, etc.). |
+| **Bump** | Tope o montículo. |
+| **Crossing** | Cruce peatonal o vehicular. |
+| **Give_Way** | Señal de “Ceda el paso”. |
+| **Junction** | Intersección o entronque. |
+| **No_Exit** | Calle sin salida. |
+| **Railway** | Vías ferroviarias cercanas. |
+| **Roundabout** | Rotonda o glorieta. |
+| **Station** | Estación (bus, tren, metro). |
+| **Stop** | Señal de “Pare”. |
+| **Traffic_Calming** | Medidas de control de tráfico. |
+| **Traffic_Signal** | Semáforo cercano. |
+| **Turning_Loop** | Área de retorno o giro. |
 
-# Precipitation(in)
-# Cantidad de precipitación acumulada en pulgadas durante el evento.
+---
 
-# Weather_Condition
-# Condición meteorológica general (ejemplo: “Clear”, “Rain”, “Snow”, “Fog”, “Thunderstorm”).
+## Condiciones de Luz
 
-# Amenity
-# Valor booleano (True/False) que indica si hay servicios o instalaciones cerca (gasolineras, tiendas, etc.).
+| Variable | Descripción |
+|---------|-------------|
+| **Sunrise_Sunset** | Día o noche según el estado del sol. |
+| **Civil_Twilight** | Crepúsculo civil. |
+| **Nautical_Twilight** | Crepúsculo náutico. |
+| **Astronomical_Twilight** | Crepúsculo astronómico. |
 
-# Bump
-# Indica si hay un tope o montículo (speed bump) cerca del lugar del accidente.
+---
 
-# Crossing
-# Indica la presencia de un cruce peatonal o vehicular cercano.
-
-# Give_Way
-# Indica si hay una señal de “Ceda el paso” cerca del sitio.
-
-# Junction
-# Indica si el accidente ocurrió cerca de una intersección o entronque.
-
-# No_Exit
-# Indica si el lugar se encuentra en una calle sin salida.
-
-# Railway
-# Indica si hay vías de tren o ferrocarril cerca del accidente.
-
-# Roundabout
-# Indica si existe una glorieta o rotonda cerca del sitio.
-
-# Station
-# Indica si hay una estación (de tren, bus, metro, etc.) cercana.
-
-# Stop
-# Indica si hay una señal de “Pare” en la zona del accidente.
-
-# Traffic_Calming
-# Indica si existen medidas de control de tráfico (badenes, chicanas, etc.) en el lugar.
-
-# Traffic_Signal
-# Indica si hay un semáforo o señal de tráfico en las cercanías.
-
-# Turning_Loop
-# Indica si hay un bucle de retorno o área de giro en el sitio.
-
-# Sunrise_Sunset
-# Periodo del día según el amanecer o atardecer: “Day” o “Night”.
-
-# Civil_Twilight
-# Indica si el accidente ocurrió durante el crepúsculo civil (día/noche civil).
-
-# Nautical_Twilight
-# Indica si ocurrió durante el crepúsculo náutico (entre civil y astronómico).
-
-# Astronomical_Twilight
-# Indica si ocurrió durante el crepúsculo astronómico (antes del amanecer o después del anochecer).
-# ============================================================
